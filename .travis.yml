@@ -12,9 +12,10 @@ script:
 - sudo tar -zxpf ${ROOTFS_FN}
 - cd root.x86_64
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
+- sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
 - sudo cp -bf ../pacman.conf.nosig ./etc/pacman.conf
-- sudo sed -i -e "s/#en_US.UTF-8/en_US.UTF-8/" ./etc/locale.gen
-- echo "LANG=en_US.UTF-8" | sudo tee ./etc/locale.conf
+- sudo sed -i -e "s/#ja_JP.UTF-8/ja_JP.UTF-8/" ./etc/locale.gen
+- echo "LANG=ja_JP.UTF-8" | sudo tee ./etc/locale.conf
 - sudo ln -sf /etc/locale.conf ./etc/default/locale
 - sudo cp -f ../${FRTCP_FN} ./root/
 - sudo cp -f /etc/resolv.conf ./etc/resolv.conf
@@ -49,10 +50,8 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: FG5Kdbdwx6GnBe70oRYkEQxg7QNBMARwbWHv+RL1AsaL2IppfqhJiHerqfFsm5yjrHz/G+k8cdycyaZ4XsyIjazylgShjR+jx43hSoqnCSPCcBphSCbzmxSCXbgBiatuyvxam+6CroEGzf97OimS8p/7gMBtnbhyhWq3Ig1ntTdgZg4oZu2nhwvOymDsH8f8jJt/BA0Zs/aMUFCbI3KUtcEytM5HFJD8k/qOXTEkKd4VOMxX27ADStoHCp3OPQUK6uFvkMc0+TVXgVWricnETit6SXfO70MSzNOu5Os+w2tITt7tFSOmfgMr/0Fgplia8lsvY46SHjaODIwVOxK1VbrCjPyBHkGpWG9P1K9l8+F4CiGpJY72a0S0YWpg7HcGJOmmS0J4oFxtQB4ns3hyhhFzVb6koi+xlWRhBVV1yd74j2S7N6er5pFxaFAJjCidtV9z0pIq+Mp2Iguzyj62D1IP9KmVK134gLfivB41sKS9ayHY2AfOiIdX6WHsIJYSDJSlRj2gbpmcBy+X1JdPPTJ3L0tpKzBhNataAAObZc6Zu2hDZ3SOsJ1/aEWxkLfAfLshR08epCi/7CCy6fK277L7i60obfTVJDbhshmd2iVE5LwsGoG68tDQYuELdc4tQRtmvGEdHqViit2fT3vNyiuAW1NfLsRjBANgwewyr+A=
-  file: rootfs.tar.gz
+    secure: KnQ/nYNPd2JJ1+lYxL8VdyzjzHcimMhOeLOCoZKYPhgj3I7li66kHoEJGUH6sTPGpLItVJ0ycVwlofHD8SQcSer59XmWEqneOPnC6nKtxCtHqLkNp5GsODuXV+ND9cTaLtAdz9+Rt4f1D+sg0luN+kV5kQSFhl0WQM3SmAFnwBaDkQMfWe0j2Rf18vMqFssqM9NouXLzqAZ5P+mt6jhiQbA87qECSs/uXwF+6MVq63LBR/WZJj/tjDcUg7pLorPhdtsuYP5W+6VdWGkC0/0LbtdANPdvjGP5lfLrpLOviw2CSQrQmJg36MyNh4MPiFTckGVcw8c8blUFW+awyQldgUg6UovSgOCfSJ+feqiTbvrz6UQEJ7Gd9uaXY2Mc5l4LJbB1ry0P7JS/RSy5EsuUy9zmjLQr+mLUK2X3okiTgzHSp2/cCpZH+aiAfLSR0G5skS9Royf69oX3+1ifKUgiIsEuQx9HKpCOt2Nx0Otx20gx7eStrckSCv5yjvQ33wAtmZ0ym/npvqsenNk7kOoto6xDIYmjEhvAa2xK8K0M/W38tPeTQ+zh+Vcs+TcsBAW+CpRT8HfaeqRBCrlIZa4SuKcZkf2I3BjclaGiBljNEBCWBIF1/o3qndWNtdIHaaDRTBUnYL7bSXaQt5mP82l/gmx1kpbU1EUL5Ihc4Lm1GKE=
+  file: ''
   on:
-    repo: yuk7/ArchWSL-FS
-    tags: true
-    all_branches: true
-  skip_cleanup: true
+    repo: kokkiemouse/Alter-WSL-FS
+  skip_cleanup: 'true'
