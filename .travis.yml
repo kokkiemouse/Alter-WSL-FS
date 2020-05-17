@@ -28,7 +28,7 @@ script:
 - yes | sudo chroot . /usr/bin/pacman -Sy 
 - yes | sudo chroot . /usr/bin/pacman -S filesystem
 - yes |sudo chroot . /usr/bin/pacman -Syu ${PAC_PKGS}
-- sudo chmod u+s ./usr/bin/ping
+- echo sudo chmod u+s ./usr/bin/ping
 - sudo rm -rf ./etc/mtab
 - echo "rootfs / rootfs rw 0 0" | sudo tee ./etc/mtab
 - sudo chroot . /usr/bin/locale-gen
