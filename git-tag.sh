@@ -10,6 +10,7 @@ else
     chmod 700 $HOME/.ssh
     openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv -in id_rsa.enc -out $HOME/.ssh/id_rsa -d
     chmod 600 $HOME/.ssh/id_rsa
+    ssh-add -K
     echo git tag $TAG
     git tag ${TAG}
     echo git push origin $TAG
