@@ -24,9 +24,9 @@ script:
 - 
 - sudo mount -t proc proc proc/
 - sudo mount --bind /sys sys
-- sudo chroot . /usr/bin/pacman -Sy --noconfirm
-- sudo chroot . /usr/bin/pacman -S --noconfirm filesystem
-- sudo chroot . /usr/bin/pacman -Syu --noconfirm ${PAC_PKGS}
+- y | sudo chroot . /usr/bin/pacman -Sy 
+- y | sudo chroot . /usr/bin/pacman -S --overwrite filesystem
+- y |sudo chroot . /usr/bin/pacman -Syu ${PAC_PKGS}
 - sudo chmod u+s ./usr/bin/ping
 - sudo rm -rf ./etc/mtab
 - echo "rootfs / rootfs rw 0 0" | sudo tee ./etc/mtab
