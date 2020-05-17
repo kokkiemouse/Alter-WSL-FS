@@ -7,7 +7,6 @@ before_script:
 script:
 - source ./env.sh
 - "${DLR} ${ROOTFS_URL} -o ${ROOTFS_FN}"
-- "${DLR} ${FRTCP_URL} -o ${FRTCP_FN}"
 - 
 - sudo tar -zxpf ${ROOTFS_FN}
 - sudo mount --bind root.x86_64 root.x86_64
@@ -18,7 +17,6 @@ script:
 - sudo sed -i -e "s/#ja_JP.UTF-8/ja_JP.UTF-8/" ./etc/locale.gen
 - echo "LANG=ja_JP.UTF-8" | sudo tee ./etc/locale.conf
 - sudo ln -sf /etc/locale.conf ./etc/default/locale
-- sudo cp -f ../${FRTCP_FN} ./root/
 - sudo cp -f /etc/resolv.conf ./etc/resolv.conf
 - sudo mv -f ./etc/mtab ./etc/mtab.bak
 - echo "rootfs / rootfs rw 0 0" | sudo tee ./etc/mtab
@@ -32,7 +30,6 @@ script:
 - sudo rm -rf ./etc/mtab
 - echo "rootfs / rootfs rw 0 0" | sudo tee ./etc/mtab
 - sudo chroot . /usr/bin/locale-gen
-- yes | sudo chroot . /usr/bin/pacman -U /root/${FRTCP_FN}
 - yes | sudo chroot . /usr/bin/pacman -Scc
 - 
 - sudo umount ./{sys,proc}
