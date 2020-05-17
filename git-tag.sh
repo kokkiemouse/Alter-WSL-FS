@@ -8,7 +8,7 @@ else
     git config --global user.email "kokkiemouse@gmail.com"
     mkdir -p $HOME/.ssh
     chmod 700 $HOME/.ssh
-    openssl aes-256-cbc -K $encrypted_4cf02c662489_key -iv $encrypted_4cf02c662489_iv -in id_ecdsa.enc -out $HOME/.ssh/id_rsa -d
+    openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv -in id_rsa.enc -out $HOME/.ssh/id_rsa -d
     chmod 600 $HOME/.ssh/id_rsa
     echo git tag $TAG
     git tag ${TAG}
