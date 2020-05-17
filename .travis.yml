@@ -10,6 +10,7 @@ script:
 - "${DLR} ${FRTCP_URL} -o ${FRTCP_FN}"
 - 
 - sudo tar -zxpf ${ROOTFS_FN}
+- sudo mount --bind root.x86_64 root.x86_64
 - cd root.x86_64
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
 - sudo cp -bf ../mirrorlist-alter ./etc/pacman.d/mirrorlist-alter
