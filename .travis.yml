@@ -25,7 +25,7 @@ script:
 - sudo mount -t proc proc proc/
 - sudo mount --bind /sys sys
 - sudo chroot . /usr/bin/pacman -Sy --noconfirm
-- sudo chroot . /usr/bin/pacman -S filesystem --overwrite --noconfirm
+- sudo chroot . /usr/bin/pacman -S --overwrite --noconfirm filesystem
 - sudo chroot . /usr/bin/pacman -Syu --noconfirm ${PAC_PKGS}
 - sudo chmod u+s ./usr/bin/ping
 - sudo rm -rf ./etc/mtab
