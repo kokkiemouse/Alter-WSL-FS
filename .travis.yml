@@ -12,7 +12,7 @@ script:
 - sudo tar -zxpf ${ROOTFS_FN}
 - cd root.x86_64
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
-- sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
+- sudo cp -bf ../mirrorlist-alter ./etc/pacman.d/mirrorlist-alter
 - sudo cp -bf ../pacman.conf.nosig ./etc/pacman.conf
 - sudo sed -i -e "s/#ja_JP.UTF-8/ja_JP.UTF-8/" ./etc/locale.gen
 - echo "LANG=ja_JP.UTF-8" | sudo tee ./etc/locale.conf
