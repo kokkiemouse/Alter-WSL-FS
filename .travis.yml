@@ -56,6 +56,5 @@ deploy:
   file: 'rootfs.tar.gz'
   on:
     repo: kokkiemouse/Alter-WSL-FS
-    tags: true
     all_branches: true
   skip_cleanup: 'true'
