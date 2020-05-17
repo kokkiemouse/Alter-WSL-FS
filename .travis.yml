@@ -51,7 +51,7 @@ jobs:
     -
       if: branch = master
       stage: Push release tag
-      script: source ./git-tag.sh
+      script: ./git-tag.sh
       deploy: []
 deploy:
   provider: releases
