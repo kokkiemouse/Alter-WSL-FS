@@ -53,7 +53,7 @@ deploy:
   provider: releases
   api_key:
     secure: KnQ/nYNPd2JJ1+lYxL8VdyzjzHcimMhOeLOCoZKYPhgj3I7li66kHoEJGUH6sTPGpLItVJ0ycVwlofHD8SQcSer59XmWEqneOPnC6nKtxCtHqLkNp5GsODuXV+ND9cTaLtAdz9+Rt4f1D+sg0luN+kV5kQSFhl0WQM3SmAFnwBaDkQMfWe0j2Rf18vMqFssqM9NouXLzqAZ5P+mt6jhiQbA87qECSs/uXwF+6MVq63LBR/WZJj/tjDcUg7pLorPhdtsuYP5W+6VdWGkC0/0LbtdANPdvjGP5lfLrpLOviw2CSQrQmJg36MyNh4MPiFTckGVcw8c8blUFW+awyQldgUg6UovSgOCfSJ+feqiTbvrz6UQEJ7Gd9uaXY2Mc5l4LJbB1ry0P7JS/RSy5EsuUy9zmjLQr+mLUK2X3okiTgzHSp2/cCpZH+aiAfLSR0G5skS9Royf69oX3+1ifKUgiIsEuQx9HKpCOt2Nx0Otx20gx7eStrckSCv5yjvQ33wAtmZ0ym/npvqsenNk7kOoto6xDIYmjEhvAa2xK8K0M/W38tPeTQ+zh+Vcs+TcsBAW+CpRT8HfaeqRBCrlIZa4SuKcZkf2I3BjclaGiBljNEBCWBIF1/o3qndWNtdIHaaDRTBUnYL7bSXaQt5mP82l/gmx1kpbU1EUL5Ihc4Lm1GKE=
-  file: ''
+  file: 'FILE TO UPLOAD'
   on:
     repo: kokkiemouse/Alter-WSL-FS
   skip_cleanup: 'true'
