@@ -46,6 +46,13 @@ script:
 - cd ..
 notifications:
   email: false
+jobs:
+  include:
+    -
+      if: branch = master
+      stage: Push release tag
+      script: ./git-tag.sh
+      deploy: []
 deploy:
   provider: releases
   api_key:
