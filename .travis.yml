@@ -3,7 +3,7 @@ dist: xenial
 language: bash
 before_script:
 - sudo apt-get update -qq
-- sudo apt-get install aria2 zip unzip check -qq
+- sudo apt-get install aria2 zip unzip check gzip -qq
 script:
 - source ./env.sh
 - "${DLR} ${ROOTFS_URL} -o ${ROOTFS_FN}"
