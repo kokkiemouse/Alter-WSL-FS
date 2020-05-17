@@ -1,8 +1,3 @@
-#!/usr/bin/env bash
-
-# この時点で打つべきタグを決定して$TAGに代入しておく
-# タグの情報源はgitのコミットログやプロジェクト内の設定ファイルなどが考えられる
-
 TAG=`date "+%Y%m%d%H%m"`
 if [[ -n "$(git tag -l ${TAG})" ]]; then
     echo "Already exist tag: ${TAG}"
