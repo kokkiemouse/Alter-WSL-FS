@@ -46,13 +46,6 @@ script:
 - cd ..
 notifications:
   email: false
-jobs:
-  include:
-    -
-      if: branch = master
-      stage: Push release tag
-      script: source ./git-tag.sh
-      deploy: []
 deploy:
   provider: releases
   api_key:
@@ -61,4 +54,5 @@ deploy:
   on:
     repo: kokkiemouse/Alter-WSL-FS
     all_branches: true
+    tags: true
   skip_cleanup: 'true'
