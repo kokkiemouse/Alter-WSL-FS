@@ -6,7 +6,7 @@ ROOTFS_FN="archlinux-bootstrap-${ROOTFS_VER}-${ARCH}.tar.gz"
 ROOTFS_URL="http://mirrors.kernel.org/archlinux/iso/${ROOTFS_VER}/${ROOTFS_FN}"
 
 
-PAC_PKGS="base base-devel less nano sudo vim curl iputils alterlinux-keyring alterlinux-calamares aptpac libpwquality yay-bin fakeroot"
+PAC_PKGS="base automake	autoconf gcc make pkgconf which m4 groff grep bison findutils less nano sudo vim curl iputils alterlinux-keyring alterlinux-calamares aptpac libpwquality yay-bin fakeroot"
 
 if type curl >/dev/null 2>&1 ;then
     DLR="curl"
