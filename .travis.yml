@@ -16,8 +16,6 @@ script:
 - sudo cp -bf ../pacman.conf.nosig ./etc/pacman.conf
 - sudo sed -i -e "s/#ja_JP.UTF-8/ja_JP.UTF-8/" ./etc/locale.gen
 - echo "LANG=ja_JP.UTF-8" | sudo tee ./etc/locale.conf
-- echo "Defaults env_keep += \"HOME\"" | sudo tee -a ./etc/sudoers
-- echo "%wheel ALL=(ALL) ALL" | sudo tee -a ./etc/sudoers
 - sudo ln -sf /etc/locale.conf ./etc/default/locale
 - sudo cp -f /etc/resolv.conf ./etc/resolv.conf
 - sudo mv -f ./etc/mtab ./etc/mtab.bak
@@ -29,6 +27,8 @@ script:
 - yes | sudo chroot . /usr/bin/pacman -S filesystem
 - yes |sudo chroot . /usr/bin/pacman -Syu ${PAC_PKGS}
 - sudo chroot . /usr/bin/groupadd --force wheel
+- echo "Defaults env_keep += \"HOME\"" | sudo tee -a ./etc/sudoers
+- echo "%wheel ALL=(ALL) ALL" | sudo tee -a ./etc/sudoers
 - echo sudo chmod u+s ./usr/bin/ping
 - sudo rm -rf ./etc/mtab
 - echo "rootfs / rootfs rw 0 0" | sudo tee ./etc/mtab
