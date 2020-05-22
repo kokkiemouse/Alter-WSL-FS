@@ -28,11 +28,11 @@ if ask_yes_no "ユーザーを作成します。よろしいですか?"; then
   echo -n "ユーザー名: "
   read Username
   if ask_yes_no "$Username このユーザー名でよろしいですか?"; then
-    echo useradd -m -g wheel -s /bin/bash ${Username}
+    useradd -m -g wheel -s /bin/bash ${Username}
     echo "パスワードを設定します。"
-    echo passwd ${Username}
+    passwd ${Username}
     echo "デフォルトユーザーを設定しています"
-    echo ${EXE_PATH} config --default-user ${Username}
+    ${EXE_PATH} config --default-user ${Username}
   fi
 else
   # ここに「No」の時の処理を書く
