@@ -13,6 +13,7 @@ script:
 - sudo rm ./etc/os-release
 - sudo ${DLR} ${OSRELEASE_URL} -o ./etc/os-release
 - sudo sed -i -e 's/%OS_NAME%/Alter Linux/g' ./etc/os-release
+- sudo rm -f ./usr/lib/os-release
 - sudo cp ./etc/os-release ./usr/lib/os-release
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
 - sudo cp -bf ../mirrorlist-alter ./etc/pacman.d/mirrorlist-alter
