@@ -7,10 +7,12 @@ before_script:
 script:
 - source ./env.sh
 - "${DLR} ${ROOTFS_URL} -o ${ROOTFS_FN}"
-- 
 - sudo tar -zxpf ${ROOTFS_FN}
 - sudo mount --bind root.x86_64 root.x86_64
 - cd root.x86_64
+- sudo ${DLR} ${OSRELEASE_URL} -o ./etc/os-release
+- sudo sed -i -e 's/%OS_NAME%/Alter Linux/g' ./etc/os-release
+- sudo cp ./etc/os-release ./usr/lib/os-release
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
 - sudo cp -bf ../mirrorlist-alter ./etc/pacman.d/mirrorlist-alter
 - sudo cp -bf ../pacman.conf.nosig ./etc/pacman.conf
