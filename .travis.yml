@@ -17,7 +17,7 @@ script:
 - sudo cp -bf ../mirrorlist ./etc/pacman.d/mirrorlist
 - sudo cp -bf ../mirrorlist-alter ./etc/pacman.d/mirrorlist-alter
 - sudo cp -bf ../pacman.conf.nosig ./etc/pacman.conf
-- sudo cp -bf ../adduser_3.113+nmu3.tar.gz ./adduser_3.113+nmu3.tar.gz
+- sudo cp -bf ../adduser-deb-3.113+nmu3-1-any.pkg.tar.xz ./adduser-deb-3.113+nmu3-1-any.pkg.tar.xz
 - sudo sed -i -e "s/#ja_JP.UTF-8/ja_JP.UTF-8/" ./etc/locale.gen
 - echo "LANG=ja_JP.UTF-8" | sudo tee ./etc/locale.conf
 - sudo ln -sf /etc/locale.conf ./etc/default/locale
@@ -29,7 +29,7 @@ script:
 - sudo mount --bind /sys sys
 - yes | sudo chroot . /usr/bin/pacman -Sy 
 - yes | sudo chroot . /usr/bin/pacman -S filesystem
-- yes | sudo chroot . /usr/bin/pacman -U adduser_3.113+nmu3.tar.gz
+- yes | sudo chroot . /usr/bin/pacman -U adduser-deb-3.113+nmu3-1-any.pkg.tar.xz
 - yes |sudo chroot . /usr/bin/pacman -Syu ${PAC_PKGS}
 - sudo chroot . /usr/bin/groupadd --force wheel
 - echo "Defaults env_keep += \"HOME\"" | sudo tee -a ./etc/sudoers
